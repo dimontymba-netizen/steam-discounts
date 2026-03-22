@@ -66,57 +66,50 @@ h1 {
 <div id="games">Завантаження...</div>
 
 <script>
-const PROXY = "https://corsproxy.io/?";
+const container = document.getElementById("games");
 
-// Список популярных игр (AppID)
-const gamesList = [
-    105600, // Terraria
-    1091500, // Cyberpunk 2077
-    578080, // PUBG
-    945360, // Valheim
-    292030, // The Witcher 3
-];
-
-// Функция загрузки игр
+// Функция загрузки игр через CheapShark API
 async function loadGames() {
-    const container = document.getElementById("games");
     container.innerHTML = "Завантаження...";
 
-    for (let appid of gamesList) {
-        try {
-            const res = await fetch(`${PROXY}https://store.steampowered.com/api/appdetails?appids=${appid}&cc=ua&l=uk`);
-            const data = await res.json();
-            const game = data[appid].data;
+    try {
+        // Берем топ скидок через CheapShark API (регион UA, Steam)
+        const res = await fetch("https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=1000&sortBy=Savings");
+        const data = await res.json();
 
-            if (!game || !game.price_overview) continue;
+        container.innerHTML = ""; // очищаем контейнер
 
-            const price = (game.price_overview.final / 100).toFixed(2);
-            const discount = game.price_overview.discount_percent;
-            const img = game.header_image;
-            const name = game.name;
+        // Берем первые 20 игр
+        data.slice(0, 20).forEach(game => {
+            const title = game.title;
+            const price = parseFloat(game.salePrice).toFixed(2);
+            const normalPrice = parseFloat(game.normalPrice).toFixed(2);
+            const discount = game.savings ? Math.floor(game.savings) : 0;
+            const thumb = game.thumb;
+            const steamLink = `https://store.steampowered.com/app/${game.steamAppID}?cc=ua`;
 
             const div = document.createElement("div");
             div.className = "game";
-            div.onclick = () => window.open(`https://store.steampowered.com/app/${appid}?cc=ua`, "_blank");
+            div.onclick = () => window.open(steamLink, "_blank");
             div.innerHTML = `
-                <h2>${name}</h2>
-                <img src="${img}" alt="${name}">
+                <h2>${title}</h2>
+                <img src="${thumb}" alt="${title}">
                 <p>Знижка: -${discount}%</p>
-                <p>Ціна: ${price} ₴</p>
+                <p>Ціна: ${price} ₴ <span style="text-decoration: line-through; color: #aaa;">${normalPrice} ₴</span></p>
             `;
-
             container.appendChild(div);
+        });
 
-        } catch (e) {
-            console.error("Помилка при завантаженні", appid, e);
-        }
+    } catch (e) {
+        container.innerHTML = "❌ Помилка завантаження";
+        console.error(e);
     }
 }
 
 // Запуск при загрузке страницы
 loadGames();
 
-// Автообновление каждые 10 минут (600000 мс)
+// Автообновление каждые 10 минут
 setInterval(loadGames, 600000);
 </script>
 
