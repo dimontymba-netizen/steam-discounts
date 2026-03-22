@@ -7,14 +7,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    background: #121212; /* Темный фон */
-    color: #e0e0e0; /* Светлый текст */
+    background: #121212;
+    color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
 h1 {
-    color: #ff6f61; /* Яркий оранжевый */
+    color: #ff6f61;
     margin-top: 20px;
     font-weight: 700;
 }
@@ -27,7 +27,7 @@ h1 {
 }
 
 .game {
-    background: #1f1f1f; /* Немного светлее фона */
+    background: #1f1f1f;
     margin: 15px;
     padding: 15px;
     border-radius: 15px;
@@ -39,7 +39,7 @@ h1 {
 
 .game:hover {
     transform: scale(1.05);
-    background: #2c2c2c; /* При наведении темнее */
+    background: #2c2c2c;
 }
 
 .game img {
@@ -50,7 +50,7 @@ h1 {
 .game h2 {
     font-size: 18px;
     margin: 10px 0;
-    color: #ffd700; /* Золотой заголовок */
+    color: #ffd700;
 }
 
 .game p {
@@ -77,9 +77,10 @@ const gamesList = [
     292030, // The Witcher 3
 ];
 
+// Функция загрузки игр
 async function loadGames() {
     const container = document.getElementById("games");
-    container.innerHTML = "";
+    container.innerHTML = "Завантаження...";
 
     for (let appid of gamesList) {
         try {
@@ -112,7 +113,11 @@ async function loadGames() {
     }
 }
 
+// Запуск при загрузке страницы
 loadGames();
+
+// Автообновление каждые 10 минут (600000 мс)
+setInterval(loadGames, 600000);
 </script>
 
 </body>
