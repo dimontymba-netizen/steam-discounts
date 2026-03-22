@@ -4,16 +4,19 @@
 <meta charset="UTF-8">
 <title>🔥 Топ знижок Steam</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    background: #0f172a;
-    color: white;
-    font-family: Arial, sans-serif;
+    background: #121212; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
 h1 {
-    color: #38bdf8;
+    color: #ff6f61; /* Яркий оранжевый */
     margin-top: 20px;
+    font-weight: 700;
 }
 
 #games {
@@ -24,23 +27,36 @@ h1 {
 }
 
 .game {
-    background: #1e293b;
+    background: #1f1f1f; /* Немного светлее фона */
     margin: 15px;
     padding: 15px;
-    border-radius: 12px;
-    width: 250px;
+    border-radius: 15px;
+    width: 260px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .game:hover {
     transform: scale(1.05);
-    background: #334155;
+    background: #2c2c2c; /* При наведении темнее */
 }
 
 .game img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+.game h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ffd700; /* Золотой заголовок */
+}
+
+.game p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #ffffff;
 }
 </style>
 </head>
