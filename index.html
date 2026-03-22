@@ -2,26 +2,33 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>🔥 Знижки Steam</title>
-
+<title>🔥 Топ знижок Steam</title>
 <style>
 body {
     background: #0f172a;
     color: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
 h1 {
     color: #38bdf8;
+    margin-top: 20px;
+}
+
+#games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .game {
     background: #1e293b;
-    margin: 15px auto;
+    margin: 15px;
     padding: 15px;
     border-radius: 12px;
-    width: 320px;
+    width: 250px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -31,34 +38,40 @@ h1 {
     background: #334155;
 }
 
-img {
-    border-radius: 10px;
+.game img {
+    width: 100%;
+    border-radius: 8px;
 }
 </style>
 </head>
-
 <body>
 
 <h1>🔥 Топ знижок Steam</h1>
 <div id="games">Завантаження...</div>
 
 <script>
+// Прокси нужен, чтобы обойти CORS
+const PROXY = "https://corsproxy.io/?";
+
 async function loadGames() {
     try {
-        let res = await fetch("https://corsproxy.io/?https://store.steampowered.com/api/featuredcategories?cc=ua&l=uk");
-        let data = await res.json();
+        // Получаем топовые скидки в Steam (регион Украина)
+        let response = await fetch(PROXY + "https://store.steampowered.com/api/featuredcategories/?cc=ua&l=uk");
+        let data = await response.json();
 
         let html = "";
 
-        data.specials.items.slice(0, 8).forEach(game => {
-            let priceUAH = game.final_price / 100;
+        // Берем первые 8 игр со скидкой
+        data.specials.items.slice(0,8).forEach(game => {
+            // Цена в гривнях уже в final_price
+            let priceUAH = (game.final_price / 100).toFixed(2);
 
             html += `
             <div class="game" onclick="openGame(${game.id})">
                 <h2>${game.name}</h2>
-                <img src="${game.header_image}" width="250"><br>
+                <img src="${game.header_image}" alt="${game.name}">
                 <p>Знижка: -${game.discount_percent}%</p>
-                <p>Ціна: ${priceUAH.toFixed(2)} ₴</p>
+                <p>Ціна: ${priceUAH} ₴</p>
             </div>
             `;
         });
@@ -77,5 +90,6 @@ function openGame(id) {
 
 loadGames();
 </script>
+
 </body>
 </html>
