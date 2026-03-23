@@ -14,7 +14,6 @@ body {
     color: white;
 }
 
-/* HEADER */
 header {
     text-align: center;
     padding: 20px;
@@ -25,7 +24,7 @@ header h1 {
     color: #22c55e;
 }
 
-/* NAV */
+/* КНОПКИ */
 nav {
     text-align: center;
     background: #1e293b;
@@ -47,26 +46,49 @@ nav button:hover {
     background: #22c55e;
 }
 
-/* CONTENT */
+/* КОНТЕНТ */
 .content {
-    padding: 20px;
     display: none;
+    padding: 20px;
 }
 
 .active {
     display: block;
 }
 
-/* CARD */
+/* КАРТОЧКИ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
 .card {
     background: #1e293b;
-    padding: 15px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #22c55e;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
 }
 
 .card h3 {
+    padding: 10px;
     color: #facc15;
+}
+
+.card p {
+    padding: 0 10px 10px;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -74,101 +96,150 @@ nav button:hover {
 <body>
 
 <header>
-    <h1>📚 Valheim Wiki</h1>
+<h1>📚 Valheim Wiki</h1>
 </header>
 
 <nav>
-    <button onclick="show('weapon')">⚔️ Зброя</button>
-    <button onclick="show('armor')">🛡 Броня</button>
-    <button onclick="show('potions')">🧪 Зілля</button>
-    <button onclick="show('mobs')">👹 Моби</button>
-    <button onclick="show('ores')">⛏ Руди</button>
+<button onclick="show('weapon')">⚔️ Зброя</button>
+<button onclick="show('armor')">🛡 Броня</button>
+<button onclick="show('potions')">🧪 Зілля</button>
+<button onclick="show('mobs')">👹 Моби</button>
+<button onclick="show('ores')">⛏ Руди</button>
+<button onclick="show('npc')">🧑 NPC</button>
+<button onclick="show('food')">🍖 Їжа</button>
 </nav>
 
 <!-- ЗБРОЯ -->
 <div id="weapon" class="content active">
+<div class="grid">
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
 <h3>🗡 Кременевий меч</h3>
-<p>Крафт: дерево + кремінь</p>
-<p>Урон: середній</p>
-<p>Краще проти: слабких мобів</p>
+<p>Крафт: дерево + кремінь<br>Добре проти слабких мобів</p>
 </div>
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
 <h3>🏹 Лук</h3>
-<p>Крафт: дерево + шкіра</p>
-<p>Дальність атаки</p>
-<p>Краще проти: тролів</p>
+<p>Крафт: дерево + шкіра<br>Краще проти тролів</p>
 </div>
 
+</div>
 </div>
 
 <!-- БРОНЯ -->
 <div id="armor" class="content">
+<div class="grid">
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
 <h3>🛡 Шкіряна броня</h3>
-<p>Крафт: шкіра оленя</p>
-<p>Захист: низький</p>
+<p>Крафт: шкіра<br>Легка броня</p>
 </div>
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_5.jpg">
 <h3>🛡 Залізна броня</h3>
-<p>Крафт: залізо</p>
-<p>Захист: високий</p>
+<p>Крафт: залізо<br>Високий захист</p>
 </div>
 
+</div>
 </div>
 
 <!-- ЗЕЛЬЯ -->
 <div id="potions" class="content">
+<div class="grid">
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_1.jpg">
 <h3>🧪 Хіл-зілля</h3>
-<p>Відновлює HP</p>
-<p>Крафт: ягоди + мед</p>
+<p>Крафт: ягоди + мед<br>Відновлює HP</p>
 </div>
 
+</div>
 </div>
 
 <!-- МОБЫ -->
 <div id="mobs" class="content">
+<div class="grid">
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg">
 <h3>👹 Greydwarf</h3>
-<p>Слабкість: вогонь</p>
-<p>Краще бити: мечем</p>
+<p>Слабкість: вогонь<br>Легкий ворог</p>
 </div>
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
 <h3>👹 Troll</h3>
-<p>Слабкість: стріли</p>
-<p>Тримай дистанцію</p>
+<p>Слабкість: стріли<br>Тримай дистанцію</p>
 </div>
 
+</div>
 </div>
 
 <!-- РУДЫ -->
 <div id="ores" class="content">
+<div class="grid">
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
 <h3>⛏ Мідь</h3>
-<p>Добувається: киркою</p>
-<p>Локація: ліс</p>
+<p>Добыча: кирка<br>Ліс</p>
 </div>
 
 <div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
 <h3>⛏ Залізо</h3>
-<p>Добувається: болота</p>
+<p>Добыча: болота</p>
 </div>
 
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_5.jpg">
+<h3>⛏ Срібло</h3>
+<p>Добыча: гори</p>
+</div>
+
+</div>
+</div>
+
+<!-- NPC -->
+<div id="npc" class="content">
+<div class="grid">
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_1.jpg">
+<h3>🧑 Haldor</h3>
+<p>Продає предмети<br>Знаходиться в лісі</p>
+</div>
+
+</div>
+</div>
+
+<!-- ЕДА -->
+<div id="food" class="content">
+<div class="grid">
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
+<h3>🍖 М'ясо</h3>
+<p>Дає HP і витривалість</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
+<h3>🍯 Мед</h3>
+<p>Регенерація</p>
+</div>
+
+</div>
 </div>
 
 <script>
 function show(id){
-    document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 </script>
 
