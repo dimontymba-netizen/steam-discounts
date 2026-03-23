@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Valheim Wiki - Категорії</title>
+<title>Valheim Wiki</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -14,6 +14,7 @@ body {
     color: white;
 }
 
+/* HEADER */
 header {
     text-align: center;
     padding: 20px;
@@ -24,54 +25,48 @@ header h1 {
     color: #22c55e;
 }
 
+/* NAV */
 nav {
     text-align: center;
-    padding: 10px;
     background: #1e293b;
+    padding: 10px;
 }
 
-nav a {
-    color: #38bdf8;
-    margin: 0 10px;
-    text-decoration: none;
+nav button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.container {
+nav button:hover {
+    background: #22c55e;
+}
+
+/* CONTENT */
+.content {
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: none;
 }
 
+.active {
+    display: block;
+}
+
+/* CARD */
 .card {
     background: #1e293b;
+    padding: 15px;
     border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.3s;
+    margin-bottom: 15px;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #22c55e;
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card h2 {
-    padding: 10px;
+.card h3 {
     color: #facc15;
-}
-
-.info {
-    display: none;
-    padding: 10px;
-    font-size: 14px;
-    color: #cbd5f5;
 }
 </style>
 </head>
@@ -79,71 +74,101 @@ nav a {
 <body>
 
 <header>
-    <h1>📚 Категорії Valheim</h1>
+    <h1>📚 Valheim Wiki</h1>
 </header>
 
 <nav>
-    <a href="index.html">Головна</a>
+    <button onclick="show('weapon')">⚔️ Зброя</button>
+    <button onclick="show('armor')">🛡 Броня</button>
+    <button onclick="show('potions')">🧪 Зілля</button>
+    <button onclick="show('mobs')">👹 Моби</button>
+    <button onclick="show('ores')">⛏ Руди</button>
 </nav>
 
-<div class="container">
+<!-- ЗБРОЯ -->
+<div id="weapon" class="content active">
 
-<div class="card" onclick="toggle(this)">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg">
-<h2>⚔️ Зброя</h2>
-<div class="info">
-Крафт: дерево + метал<br>
-Краще проти: всіх мобів<br>
-Типи: меч, сокира, лук
-</div>
+<div class="card">
+<h3>🗡 Кременевий меч</h3>
+<p>Крафт: дерево + кремінь</p>
+<p>Урон: середній</p>
+<p>Краще проти: слабких мобів</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
-<h2>🛡 Броня</h2>
-<div class="info">
-Крафт: шкіра, залізо<br>
-Дає захист<br>
-Краще носити сет
-</div>
+<div class="card">
+<h3>🏹 Лук</h3>
+<p>Крафт: дерево + шкіра</p>
+<p>Дальність атаки</p>
+<p>Краще проти: тролів</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
-<h2>🧪 Зілля</h2>
-<div class="info">
-Дає бафи<br>
-Крафт через казан<br>
-Потрібно для босів
-</div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
-<h2>👹 Моби</h2>
-<div class="info">
-Greydwarf, Troll<br>
-Слабкість: вогонь<br>
-Краще бити луком
-</div>
+<!-- БРОНЯ -->
+<div id="armor" class="content">
+
+<div class="card">
+<h3>🛡 Шкіряна броня</h3>
+<p>Крафт: шкіра оленя</p>
+<p>Захист: низький</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_5.jpg">
-<h2>⛏ Руди</h2>
-<div class="info">
-Мідь, залізо, срібло<br>
-Добыча: кирка<br>
-Потрібно для крафту
+<div class="card">
+<h3>🛡 Залізна броня</h3>
+<p>Крафт: залізо</p>
+<p>Захист: високий</p>
 </div>
+
+</div>
+
+<!-- ЗЕЛЬЯ -->
+<div id="potions" class="content">
+
+<div class="card">
+<h3>🧪 Хіл-зілля</h3>
+<p>Відновлює HP</p>
+<p>Крафт: ягоди + мед</p>
+</div>
+
+</div>
+
+<!-- МОБЫ -->
+<div id="mobs" class="content">
+
+<div class="card">
+<h3>👹 Greydwarf</h3>
+<p>Слабкість: вогонь</p>
+<p>Краще бити: мечем</p>
+</div>
+
+<div class="card">
+<h3>👹 Troll</h3>
+<p>Слабкість: стріли</p>
+<p>Тримай дистанцію</p>
+</div>
+
+</div>
+
+<!-- РУДЫ -->
+<div id="ores" class="content">
+
+<div class="card">
+<h3>⛏ Мідь</h3>
+<p>Добувається: киркою</p>
+<p>Локація: ліс</p>
+</div>
+
+<div class="card">
+<h3>⛏ Залізо</h3>
+<p>Добувається: болота</p>
 </div>
 
 </div>
 
 <script>
-function toggle(card){
-    let info = card.querySelector(".info");
-    info.style.display = info.style.display === "block" ? "none" : "block";
+function show(id){
+    document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
 }
 </script>
 
