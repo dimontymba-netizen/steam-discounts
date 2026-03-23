@@ -24,7 +24,6 @@ header h1 {
     color: #22c55e;
 }
 
-/* КНОПКИ */
 nav {
     text-align: center;
     background: #1e293b;
@@ -39,14 +38,12 @@ nav button {
     background: #334155;
     color: white;
     cursor: pointer;
-    font-weight: bold;
 }
 
 nav button:hover {
     background: #22c55e;
 }
 
-/* КОНТЕНТ */
 .content {
     display: none;
     padding: 20px;
@@ -56,28 +53,27 @@ nav button:hover {
     display: block;
 }
 
-/* КАРТОЧКИ */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
 }
 
 .card {
     background: #1e293b;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 0 15px #22c55e;
 }
 
 .card img {
     width: 100%;
-    height: 140px;
+    height: 180px;
     object-fit: cover;
 }
 
@@ -86,9 +82,14 @@ nav button:hover {
     color: #facc15;
 }
 
-.card p {
-    padding: 0 10px 10px;
-    font-size: 14px;
+.block {
+    padding: 10px;
+    border-top: 1px solid #334155;
+}
+
+.block span {
+    color: #22c55e;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -102,11 +103,8 @@ nav button:hover {
 <nav>
 <button onclick="show('weapon')">⚔️ Зброя</button>
 <button onclick="show('armor')">🛡 Броня</button>
-<button onclick="show('potions')">🧪 Зілля</button>
-<button onclick="show('mobs')">👹 Моби</button>
 <button onclick="show('ores')">⛏ Руди</button>
-<button onclick="show('npc')">🧑 NPC</button>
-<button onclick="show('food')">🍖 Їжа</button>
+<button onclick="show('mobs')">👹 Моби</button>
 </nav>
 
 <!-- ЗБРОЯ -->
@@ -116,13 +114,47 @@ nav button:hover {
 <div class="card">
 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
 <h3>🗡 Кременевий меч</h3>
-<p>Крафт: дерево + кремінь<br>Добре проти слабких мобів</p>
+
+<div class="block">
+<span>Крафт:</span><br>
+Дерево x5<br>
+Кремінь x4
+</div>
+
+<div class="block">
+<span>Де взяти:</span><br>
+Дерево — рубати дерева 🌲<br>
+Кремінь — біля води
+</div>
+
+<div class="block">
+<span>Проти кого:</span><br>
+Greydwarf, Neck
+</div>
+
 </div>
 
 <div class="card">
 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
 <h3>🏹 Лук</h3>
-<p>Крафт: дерево + шкіра<br>Краще проти тролів</p>
+
+<div class="block">
+<span>Крафт:</span><br>
+Дерево x10<br>
+Шкіра x8
+</div>
+
+<div class="block">
+<span>Де взяти:</span><br>
+Шкіра — падає з оленів 🦌<br>
+Дерево — ліс
+</div>
+
+<div class="block">
+<span>Проти кого:</span><br>
+Troll (з дистанції)
+</div>
+
 </div>
 
 </div>
@@ -135,45 +167,22 @@ nav button:hover {
 <div class="card">
 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
 <h3>🛡 Шкіряна броня</h3>
-<p>Крафт: шкіра<br>Легка броня</p>
+
+<div class="block">
+<span>Крафт:</span><br>
+Шкіра x6
 </div>
 
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_5.jpg">
-<h3>🛡 Залізна броня</h3>
-<p>Крафт: залізо<br>Високий захист</p>
+<div class="block">
+<span>Де взяти:</span><br>
+Олені 🦌
 </div>
 
-</div>
-</div>
-
-<!-- ЗЕЛЬЯ -->
-<div id="potions" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_1.jpg">
-<h3>🧪 Хіл-зілля</h3>
-<p>Крафт: ягоди + мед<br>Відновлює HP</p>
+<div class="block">
+<span>Порада:</span><br>
+Початкова броня
 </div>
 
-</div>
-</div>
-
-<!-- МОБЫ -->
-<div id="mobs" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg">
-<h3>👹 Greydwarf</h3>
-<p>Слабкість: вогонь<br>Легкий ворог</p>
-</div>
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
-<h3>👹 Troll</h3>
-<p>Слабкість: стріли<br>Тримай дистанцію</p>
 </div>
 
 </div>
@@ -186,51 +195,71 @@ nav button:hover {
 <div class="card">
 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
 <h3>⛏ Мідь</h3>
-<p>Добыча: кирка<br>Ліс</p>
+
+<div class="block">
+<span>Де знайти:</span><br>
+Чорний ліс 🌲
 </div>
 
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
-<h3>⛏ Залізо</h3>
-<p>Добыча: болота</p>
+<div class="block">
+<span>Як добути:</span><br>
+Кирка
 </div>
 
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_5.jpg">
-<h3>⛏ Срібло</h3>
-<p>Добыча: гори</p>
+<div class="block">
+<span>Потрібно для:</span><br>
+Інструменти, броня
 </div>
 
 </div>
+
+</div>
 </div>
 
-<!-- NPC -->
-<div id="npc" class="content">
+<!-- МОБЫ -->
+<div id="mobs" class="content">
 <div class="grid">
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_1.jpg">
-<h3>🧑 Haldor</h3>
-<p>Продає предмети<br>Знаходиться в лісі</p>
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg">
+<h3>👹 Greydwarf</h3>
+
+<div class="block">
+<span>Дроп:</span><br>
+Дерево, смола
+</div>
+
+<div class="block">
+<span>Слабкість:</span><br>
+Вогонь 🔥
+</div>
+
+<div class="block">
+<span>Як вбити:</span><br>
+Меч або факел
 </div>
 
 </div>
-</div>
-
-<!-- ЕДА -->
-<div id="food" class="content">
-<div class="grid">
 
 <div class="card">
 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
-<h3>🍖 М'ясо</h3>
-<p>Дає HP і витривалість</p>
+<h3>👹 Troll</h3>
+
+<div class="block">
+<span>Дроп:</span><br>
+Троляча шкіра
 </div>
 
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
-<h3>🍯 Мед</h3>
-<p>Регенерація</p>
+<div class="block">
+<span>Слабкість:</span><br>
+Дальня атака
+</div>
+
+<div class="block">
+<span>Як вбити:</span><br>
+Лук + дистанція
+</div>
+
 </div>
 
 </div>
