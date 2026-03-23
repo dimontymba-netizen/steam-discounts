@@ -5,24 +5,21 @@
 <title>Valheim Wiki</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial;
     background: #0f172a;
-    color: #e2e8f0;
+    color: white;
 }
 
 header {
-    background: linear-gradient(90deg, #1e293b, #334155);
+    background: #020617;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    color: #facc15;
+    color: #22c55e;
 }
 
 nav {
@@ -33,13 +30,13 @@ nav {
 
 nav a {
     color: #38bdf8;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #facc15;
+    color: #22c55e;
 }
 
 .container {
@@ -48,28 +45,25 @@ nav a:hover {
     margin: auto;
 }
 
-.section {
-    margin-bottom: 30px;
-}
-
 .card {
     background: #1e293b;
     padding: 15px;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-img {
-    width: 100%;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
-footer {
-    background: #1e293b;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    color: #94a3b8;
+button {
+    padding: 10px 20px;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #16a34a;
 }
 </style>
 </head>
@@ -78,70 +72,41 @@ footer {
 
 <header>
     <h1>⚔️ Valheim Wiki</h1>
-    <p>Гайд та інформація про гру</p>
+    <p>Все про гру Valheim</p>
 </header>
 
 <nav>
-    <a href="#about">Про гру</a>
-    <a href="#gameplay">Геймплей</a>
-    <a href="#bosses">Боси</a>
-    <a href="#tips">Поради</a>
+    <a href="index.html">Головна</a>
+    <a href="guide.html">Категорії</a>
 </nav>
 
 <div class="container">
 
-    <div class="section" id="about">
+    <div class="card">
         <h2>📖 Про гру</h2>
-        <div class="card">
-            <p>
-                Valheim — це виживання у світі вікінгів, де гравець досліджує процедурно згенерований світ,
-                будує бази, б'ється з монстрами та босами.
-            </p>
-        </div>
+        <p>
+            Valheim — це гра про виживання у світі вікінгів. Ти досліджуєш світ,
+            будуєш базу, крафтиш речі та вбиваєш босів.
+        </p>
     </div>
 
-    <div class="section" id="gameplay">
-        <h2>🎮 Геймплей</h2>
-        <div class="card">
-            <ul>
-                <li>⛏️ Видобуток ресурсів</li>
-                <li>🏹 Бій з ворогами</li>
-                <li>🏠 Будівництво бази</li>
-                <li>🌍 Дослідження світу</li>
-            </ul>
-        </div>
-    </div>
+    <div class="card">
+        <h2>🔥 Що є на сайті</h2>
+        <ul>
+            <li>⚔️ Зброя</li>
+            <li>🛡 Броня</li>
+            <li>🧪 Зілля</li>
+            <li>👹 Моби</li>
+            <li>⛏ Руди</li>
+        </ul>
 
-    <div class="section" id="bosses">
-        <h2>👹 Боси</h2>
-        <div class="card">
-            <ul>
-                <li>Eikthyr</li>
-                <li>The Elder</li>
-                <li>Bonemass</li>
-                <li>Moder</li>
-                <li>Yagluth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section" id="tips">
-        <h2>💡 Поради</h2>
-        <div class="card">
-            <ul>
-                <li>Не забувай їсти для збільшення HP</li>
-                <li>Будуй базу біля ресурсів</li>
-                <li>Готуйся до босів заздалегідь</li>
-                <li>Завжди май запас стріл</li>
-            </ul>
-        </div>
+        <br>
+        <a href="guide.html">
+            <button>Перейти до категорій</button>
+        </a>
     </div>
 
 </div>
-
-<footer>
-    Зроблено учнем Тимофій Федорченко 🇺🇦
-</footer>
 
 </body>
 </html>
