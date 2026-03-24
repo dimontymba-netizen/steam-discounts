@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Valheim Wiki 📖</title>
+<title>Valheim Wiki ULTRA 📖</title>
 
 <style>
 body {
@@ -12,6 +12,7 @@ body {
     color: #eee;
 }
 
+/* HEADER */
 header {
     background: #2a2a2a;
     padding: 25px;
@@ -19,6 +20,7 @@ header {
     font-size: 32px;
 }
 
+/* NAV */
 nav {
     background: #111;
     padding: 10px;
@@ -32,12 +34,38 @@ nav a {
     font-weight: bold;
 }
 
+/* КНОПКА НАЗАД */
+.home-btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 20px;
+    background: #0af;
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ЯКОРІ */
+.menu {
+    background: #181818;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu a {
+    color: #fff;
+    margin: 8px;
+    text-decoration: none;
+}
+
+/* СЕКЦІЇ */
 section {
     padding: 20px;
 }
 
 .category {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .card {
@@ -69,24 +97,41 @@ footer {
 
 <body>
 
-<header>📖 Велика Valheim Wiki</header>
+<header>📖 Valheim ULTRA Wiki</header>
 
 <nav>
-<a href="index.html">Головна</a>
-<a href="guide.html">Гайд</a>
+<a href="index.html">🏠 На головну</a>
+<a href="guide.html">📖 Гайд</a>
 </nav>
+
+<div style="text-align:center;">
+<a class="home-btn" href="index.html">⬅ Повернутись на головну</a>
+</div>
+
+<!-- ЯКОРНЕ МЕНЮ -->
+<div class="menu">
+<a href="#biomes">Біоми</a>
+<a href="#food">Їжа</a>
+<a href="#weapons">Зброя</a>
+<a href="#armor">Броня</a>
+<a href="#tools">Інструменти</a>
+<a href="#resources">Ресурси</a>
+<a href="#mobs">Моби</a>
+<a href="#bosses">Боси</a>
+<a href="#craft">Крафт</a>
+</div>
 
 <section>
 
 <!-- БІОМИ -->
-<div class="category">
+<div class="category" id="biomes">
 <h2>🌍 Біоми</h2>
 
 <div class="card">
 <img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Meadows.png">
 <div>
 <h3>Луки</h3>
-<p>Стартова зона. Безпечна для новачків.</p>
+<p>Стартова зона. Тут мало ворогів і легко виживати.</p>
 </div>
 </div>
 
@@ -94,7 +139,7 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/0/0c/Black_Forest.png">
 <div>
 <h3>Чорний ліс</h3>
-<p>Більше небезпеки, з’являються тролі.</p>
+<p>З’являються грейдварфи і тролі. Є мідь і олово.</p>
 </div>
 </div>
 
@@ -102,21 +147,29 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/5/5b/Swamp.png">
 <div>
 <h3>Болота</h3>
-<p>Отрута, сильні вороги та залізо.</p>
+<p>Отрута, крипти та залізо.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/9/91/Mountains.png">
+<div>
+<h3>Гори</h3>
+<p>Холод і дракони. Потрібен захист від холоду.</p>
 </div>
 </div>
 
 </div>
 
 <!-- ЇЖА -->
-<div class="category">
+<div class="category" id="food">
 <h2>🍖 Їжа</h2>
 
 <div class="card">
 <img src="https://static.wikia.nocookie.net/valheim/images/8/89/Meat.png">
 <div>
 <h3>М'ясо</h3>
-<p>Дає багато здоров’я.</p>
+<p>Дає багато HP.</p>
 </div>
 </div>
 
@@ -124,22 +177,22 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/1/17/Honey.png">
 <div>
 <h3>Мед</h3>
-<p>Швидко відновлює HP.</p>
+<p>Швидке відновлення.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/3/3d/Cooked_meat.png">
+<img src="https://static.wikia.nocookie.net/valheim/images/2/21/Sausages.png">
 <div>
-<h3>Смажене м’ясо</h3>
-<p>Краще за сире.</p>
+<h3>Ковбаси</h3>
+<p>Сильна їжа серед гри.</p>
 </div>
 </div>
 
 </div>
 
 <!-- ЗБРОЯ -->
-<div class="category">
+<div class="category" id="weapons">
 <h2>⚔️ Зброя</h2>
 
 <div class="card">
@@ -154,7 +207,7 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/6/6f/Iron_sword.png">
 <div>
 <h3>Залізний меч</h3>
-<p>Сильна зброя середини гри.</p>
+<p>Сильний у середині гри.</p>
 </div>
 </div>
 
@@ -162,14 +215,14 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/7/7a/Bow.png">
 <div>
 <h3>Лук</h3>
-<p>Атака на відстані.</p>
+<p>Дальній бій.</p>
 </div>
 </div>
 
 </div>
 
 <!-- БРОНЯ -->
-<div class="category">
+<div class="category" id="armor">
 <h2>🛡️ Броня</h2>
 
 <div class="card">
@@ -191,14 +244,14 @@ footer {
 </div>
 
 <!-- ІНСТРУМЕНТИ -->
-<div class="category">
+<div class="category" id="tools">
 <h2>🛠️ Інструменти</h2>
 
 <div class="card">
 <img src="https://static.wikia.nocookie.net/valheim/images/9/9c/Axe.png">
 <div>
 <h3>Сокира</h3>
-<p>Для дерева та бою.</p>
+<p>Для дерева і бою.</p>
 </div>
 </div>
 
@@ -206,21 +259,21 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/8/8e/Pickaxe.png">
 <div>
 <h3>Кирка</h3>
-<p>Для видобутку руди.</p>
+<p>Для руди.</p>
 </div>
 </div>
 
 </div>
 
 <!-- РЕСУРСИ -->
-<div class="category">
+<div class="category" id="resources">
 <h2>⛏️ Ресурси</h2>
 
 <div class="card">
 <img src="https://static.wikia.nocookie.net/valheim/images/5/5c/Wood.png">
 <div>
 <h3>Дерево</h3>
-<p>Базовий ресурс.</p>
+<p>Основний ресурс.</p>
 </div>
 </div>
 
@@ -228,14 +281,14 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/8/8d/Iron.png">
 <div>
 <h3>Залізо</h3>
-<p>Для топ крафту.</p>
+<p>Топ ресурс.</p>
 </div>
 </div>
 
 </div>
 
 <!-- МОБИ -->
-<div class="category">
+<div class="category" id="mobs">
 <h2>👺 Моби</h2>
 
 <div class="card">
@@ -257,7 +310,7 @@ footer {
 </div>
 
 <!-- БОСИ -->
-<div class="category">
+<div class="category" id="bosses">
 <h2>👹 Боси</h2>
 
 <div class="card">
@@ -276,11 +329,25 @@ footer {
 </div>
 </div>
 
+</div>
+
+<!-- КРАФТ -->
+<div class="category" id="craft">
+<h2>⚒️ Крафт</h2>
+
 <div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Bonemass.png">
+<img src="https://static.wikia.nocookie.net/valheim/images/7/7e/Workbench.png">
 <div>
-<h3>Масса кісток</h3>
-<p>Складний бос.</p>
+<h3>Верстак</h3>
+<p>Основа гри.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/1/19/Forge.png">
+<div>
+<h3>Кузня</h3>
+<p>Для зброї та броні.</p>
 </div>
 </div>
 
