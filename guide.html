@@ -14,9 +14,9 @@ body {
 
 header {
     background: #2a2a2a;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 nav {
@@ -37,16 +37,21 @@ section {
 }
 
 .category {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .card {
     background: #2c2c2c;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     margin: 10px 0;
     display: flex;
     gap: 15px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 .card img {
@@ -58,16 +63,13 @@ footer {
     background: #111;
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-📖 Valheim Wiki Guide
-</header>
+<header>📖 Велика Valheim Wiki</header>
 
 <nav>
 <a href="index.html">Головна</a>
@@ -76,6 +78,140 @@ footer {
 
 <section>
 
+<!-- БІОМИ -->
+<div class="category">
+<h2>🌍 Біоми</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Meadows.png">
+<div>
+<h3>Луки</h3>
+<p>Стартова зона. Безпечна для новачків.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/0/0c/Black_Forest.png">
+<div>
+<h3>Чорний ліс</h3>
+<p>Більше небезпеки, з’являються тролі.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/5/5b/Swamp.png">
+<div>
+<h3>Болота</h3>
+<p>Отрута, сильні вороги та залізо.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ЇЖА -->
+<div class="category">
+<h2>🍖 Їжа</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/8/89/Meat.png">
+<div>
+<h3>М'ясо</h3>
+<p>Дає багато здоров’я.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/1/17/Honey.png">
+<div>
+<h3>Мед</h3>
+<p>Швидко відновлює HP.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/3/3d/Cooked_meat.png">
+<div>
+<h3>Смажене м’ясо</h3>
+<p>Краще за сире.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ЗБРОЯ -->
+<div class="category">
+<h2>⚔️ Зброя</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/2/2a/Club.png">
+<div>
+<h3>Дубина</h3>
+<p>Стартова зброя.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/6/6f/Iron_sword.png">
+<div>
+<h3>Залізний меч</h3>
+<p>Сильна зброя середини гри.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/7/7a/Bow.png">
+<div>
+<h3>Лук</h3>
+<p>Атака на відстані.</p>
+</div>
+</div>
+
+</div>
+
+<!-- БРОНЯ -->
+<div class="category">
+<h2>🛡️ Броня</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/4/44/Leather_armor.png">
+<div>
+<h3>Шкіряна броня</h3>
+<p>Початкова броня.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/5/5d/Iron_armor.png">
+<div>
+<h3>Залізна броня</h3>
+<p>Сильний захист.</p>
+</div>
+</div>
+
+</div>
+
+<!-- ІНСТРУМЕНТИ -->
+<div class="category">
+<h2>🛠️ Інструменти</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/9/9c/Axe.png">
+<div>
+<h3>Сокира</h3>
+<p>Для дерева та бою.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/8/8e/Pickaxe.png">
+<div>
+<h3>Кирка</h3>
+<p>Для видобутку руди.</p>
+</div>
+</div>
+
+</div>
+
 <!-- РЕСУРСИ -->
 <div class="category">
 <h2>⛏️ Ресурси</h2>
@@ -83,16 +219,8 @@ footer {
 <div class="card">
 <img src="https://static.wikia.nocookie.net/valheim/images/5/5c/Wood.png">
 <div>
-<h3>Деревина</h3>
-<p>Добувається з дерев. Потрібна майже для всього крафту на початку гри.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/2/2f/Stone.png">
-<div>
-<h3>Камінь</h3>
-<p>Використовується для будівництва та покращень.</p>
+<h3>Дерево</h3>
+<p>Базовий ресурс.</p>
 </div>
 </div>
 
@@ -100,59 +228,7 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/8/8d/Iron.png">
 <div>
 <h3>Залізо</h3>
-<p>Добувається в болотах. Потрібне для топового спорядження.</p>
-</div>
-</div>
-
-</div>
-
-<!-- БОСИ -->
-<div class="category">
-<h2>👹 Боси</h2>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/9/9b/Eikthyr.png">
-<div>
-<h3>Ейктюр</h3>
-<p>Перший бос. Викликається за допомогою трофеїв оленя.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/3/3d/The_Elder.png">
-<div>
-<h3>Древній</h3>
-<p>Другий бос. Дає ключ до крипт.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Bonemass.png">
-<div>
-<h3>Кістяна маса</h3>
-<p>Дуже складний бос із боліт.</p>
-</div>
-</div>
-
-</div>
-
-<!-- КРАФТ -->
-<div class="category">
-<h2>⚒️ Крафт</h2>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/7/7e/Workbench.png">
-<div>
-<h3>Верстак</h3>
-<p>Основа всіх крафтів. Без нього нічого не створиш.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://static.wikia.nocookie.net/valheim/images/1/19/Forge.png">
-<div>
-<h3>Кузня</h3>
-<p>Використовується для створення зброї та броні.</p>
+<p>Для топ крафту.</p>
 </div>
 </div>
 
@@ -166,7 +242,7 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/0/0f/Greydwarf.png">
 <div>
 <h3>Грейдварф</h3>
-<p>Часто зустрічається в лісі. Нападає групами.</p>
+<p>Частий ворог.</p>
 </div>
 </div>
 
@@ -174,7 +250,37 @@ footer {
 <img src="https://static.wikia.nocookie.net/valheim/images/4/4c/Troll.png">
 <div>
 <h3>Троль</h3>
-<p>Дуже сильний ворог. Краще атакувати здалеку.</p>
+<p>Дуже сильний.</p>
+</div>
+</div>
+
+</div>
+
+<!-- БОСИ -->
+<div class="category">
+<h2>👹 Боси</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/9/9b/Eikthyr.png">
+<div>
+<h3>Ейктюр</h3>
+<p>Перший бос.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/3/3d/The_Elder.png">
+<div>
+<h3>Древній</h3>
+<p>Другий бос.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Bonemass.png">
+<div>
+<h3>Масса кісток</h3>
+<p>Складний бос.</p>
 </div>
 </div>
 
