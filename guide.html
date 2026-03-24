@@ -2,100 +2,63 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Valheim Wiki</title>
+<title>Valheim Wiki 📖</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    color: white;
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: #eee;
 }
 
 header {
-    text-align: center;
+    background: #2a2a2a;
     padding: 20px;
-    background: #020617;
-}
-
-header h1 {
-    color: #22c55e;
-}
-
-/* КНОПКИ */
-nav {
     text-align: center;
-    background: #1e293b;
-    padding: 10px;
+    font-size: 28px;
 }
 
-nav button {
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    background: #334155;
-    color: white;
-    cursor: pointer;
+nav {
+    background: #111;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #0af;
+    margin: 10px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-nav button:hover {
-    background: #22c55e;
-}
-
-/* КОНТЕНТ */
-.content {
-    display: none;
+section {
     padding: 20px;
 }
 
-.active {
-    display: block;
+.category {
+    margin-bottom: 40px;
 }
 
-/* СЕТКА */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* КАРТОЧКИ */
 .card {
-    background: #1e293b;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px #22c55e;
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+    gap: 15px;
 }
 
 .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    width: 120px;
+    border-radius: 10px;
 }
 
-.card h3 {
-    padding: 10px;
-    color: #facc15;
-}
-
-.block {
-    padding: 10px;
-    border-top: 1px solid #334155;
-    font-size: 14px;
-}
-
-.block span {
-    color: #22c55e;
-    font-weight: bold;
+footer {
+    background: #111;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
 }
 </style>
 </head>
@@ -103,365 +66,125 @@ nav button:hover {
 <body>
 
 <header>
-<h1>📚 Valheim Wiki</h1>
+📖 Valheim Wiki Guide
 </header>
 
 <nav>
-<button onclick="show('weapon')">⚔️ Зброя</button>
-<button onclick="show('armor')">🛡 Броня</button>
-<button onclick="show('ores')">⛏ Руди</button>
-<button onclick="show('mobs')">👹 Моби</button>
+<a href="index.html">Головна</a>
+<a href="guide.html">Гайд</a>
 </nav>
 
-<!-- ЗБРОЯ -->
-<div id="weapon" class="content active">
-<div class="grid">
+<section>
+
+<!-- РЕСУРСИ -->
+<div class="category">
+<h2>⛏️ Ресурси</h2>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Valheim'">
-<h3>🗡 Кременевий меч</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Дерево x5 + Кремінь x4
+<img src="https://static.wikia.nocookie.net/valheim/images/5/5c/Wood.png">
+<div>
+<h3>Деревина</h3>
+<p>Добувається з дерев. Потрібна майже для всього крафту на початку гри.</p>
 </div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Дерево — рубати 🌲<br>
-Кремінь — біля води
-</div>
-
-<div class="block">
-<span>Проти кого:</span><br>
-Greydwarf
-</div>
-
 </div>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/library_hero.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Valheim'">
-<h3>🏹 Лук</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Дерево x10 + Шкіра x8
+<img src="https://static.wikia.nocookie.net/valheim/images/2/2f/Stone.png">
+<div>
+<h3>Камінь</h3>
+<p>Використовується для будівництва та покращень.</p>
 </div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Шкіра — олені 🦌
-</div>
-
-<div class="block">
-<span>Проти кого:</span><br>
-Troll
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- БРОНЯ -->
-<div id="armor" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Armor'">
-<h3>🛡 Шкіряна броня</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Шкіра x6
-</div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Олені 🦌
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- РУДЫ -->
-<div id="ores" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Ore'">
-<h3>⛏ Мідь</h3>
-
-<div class="block">
-<span>Де знайти:</span><br>
-Чорний ліс
-</div>
-
-<div class="block">
-<span>Як добути:</span><br>
-Кирка
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- МОБЫ -->
-<div id="mobs" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Mob'">
-<h3>👹 Greydwarf</h3>
-
-<div class="block">
-<span>Дроп:</span><br>
-Смола, дерево
-</div>
-
-<div class="block">
-<span>Слабкість:</span><br>
-Вогонь 🔥
-</div>
-
 </div>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/library_hero.jpg"
-onerror="this.src='https://via.placeholder.com/300x180?text=Mob'">
-<h3>👹 Troll</h3>
-
-<div class="block">
-<span>Дроп:</span><br>
-Шкіра троля
+<img src="https://static.wikia.nocookie.net/valheim/images/8/8d/Iron.png">
+<div>
+<h3>Залізо</h3>
+<p>Добувається в болотах. Потрібне для топового спорядження.</p>
 </div>
-
-<div class="block">
-<span>Як вбити:</span><br>
-Лук + дистанція
 </div>
 
 </div>
 
-</div>
-</div>
-
-<script>
-function show(id){
-document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-</html>.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card h3 {
-    padding: 10px;
-    color: #facc15;
-}
-
-.block {
-    padding: 10px;
-    border-top: 1px solid #334155;
-}
-
-.block span {
-    color: #22c55e;
-    font-weight: bold;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>📚 Valheim Wiki</h1>
-</header>
-
-<nav>
-<button onclick="show('weapon')">⚔️ Зброя</button>
-<button onclick="show('armor')">🛡 Броня</button>
-<button onclick="show('ores')">⛏ Руди</button>
-<button onclick="show('mobs')">👹 Моби</button>
-</nav>
-
-<!-- ЗБРОЯ -->
-<div id="weapon" class="content active">
-<div class="grid">
+<!-- БОСИ -->
+<div class="category">
+<h2>👹 Боси</h2>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
-<h3>🗡 Кременевий меч</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Дерево x5<br>
-Кремінь x4
+<img src="https://static.wikia.nocookie.net/valheim/images/9/9b/Eikthyr.png">
+<div>
+<h3>Ейктюр</h3>
+<p>Перший бос. Викликається за допомогою трофеїв оленя.</p>
 </div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Дерево — рубати дерева 🌲<br>
-Кремінь — біля води
-</div>
-
-<div class="block">
-<span>Проти кого:</span><br>
-Greydwarf, Neck
-</div>
-
 </div>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
-<h3>🏹 Лук</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Дерево x10<br>
-Шкіра x8
+<img src="https://static.wikia.nocookie.net/valheim/images/3/3d/The_Elder.png">
+<div>
+<h3>Древній</h3>
+<p>Другий бос. Дає ключ до крипт.</p>
 </div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Шкіра — падає з оленів 🦌<br>
-Дерево — ліс
-</div>
-
-<div class="block">
-<span>Проти кого:</span><br>
-Troll (з дистанції)
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- БРОНЯ -->
-<div id="armor" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_4.jpg">
-<h3>🛡 Шкіряна броня</h3>
-
-<div class="block">
-<span>Крафт:</span><br>
-Шкіра x6
-</div>
-
-<div class="block">
-<span>Де взяти:</span><br>
-Олені 🦌
-</div>
-
-<div class="block">
-<span>Порада:</span><br>
-Початкова броня
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- РУДЫ -->
-<div id="ores" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_3.jpg">
-<h3>⛏ Мідь</h3>
-
-<div class="block">
-<span>Де знайти:</span><br>
-Чорний ліс 🌲
-</div>
-
-<div class="block">
-<span>Як добути:</span><br>
-Кирка
-</div>
-
-<div class="block">
-<span>Потрібно для:</span><br>
-Інструменти, броня
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- МОБЫ -->
-<div id="mobs" class="content">
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg">
-<h3>👹 Greydwarf</h3>
-
-<div class="block">
-<span>Дроп:</span><br>
-Дерево, смола
-</div>
-
-<div class="block">
-<span>Слабкість:</span><br>
-Вогонь 🔥
-</div>
-
-<div class="block">
-<span>Як вбити:</span><br>
-Меч або факел
-</div>
-
 </div>
 
 <div class="card">
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/892970/ss_2.jpg">
-<h3>👹 Troll</h3>
-
-<div class="block">
-<span>Дроп:</span><br>
-Троляча шкіра
+<img src="https://static.wikia.nocookie.net/valheim/images/6/6c/Bonemass.png">
+<div>
+<h3>Кістяна маса</h3>
+<p>Дуже складний бос із боліт.</p>
 </div>
-
-<div class="block">
-<span>Слабкість:</span><br>
-Дальня атака
-</div>
-
-<div class="block">
-<span>Як вбити:</span><br>
-Лук + дистанція
 </div>
 
 </div>
 
+<!-- КРАФТ -->
+<div class="category">
+<h2>⚒️ Крафт</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/7/7e/Workbench.png">
+<div>
+<h3>Верстак</h3>
+<p>Основа всіх крафтів. Без нього нічого не створиш.</p>
 </div>
 </div>
 
-<script>
-function show(id){
-document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-</script>
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/1/19/Forge.png">
+<div>
+<h3>Кузня</h3>
+<p>Використовується для створення зброї та броні.</p>
+</div>
+</div>
+
+</div>
+
+<!-- МОБИ -->
+<div class="category">
+<h2>👺 Моби</h2>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/0/0f/Greydwarf.png">
+<div>
+<h3>Грейдварф</h3>
+<p>Часто зустрічається в лісі. Нападає групами.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://static.wikia.nocookie.net/valheim/images/4/4c/Troll.png">
+<div>
+<h3>Троль</h3>
+<p>Дуже сильний ворог. Краще атакувати здалеку.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Зроблено учнем Тимофій Федорченко ❤️
+</footer>
 
 </body>
 </html>
