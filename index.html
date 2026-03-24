@@ -2,174 +2,86 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Valheim Wiki</title>
+<title>Valheim Menu 🛡️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #0f172a;
+    font-family: Arial, sans-serif;
+    background: url('https://images.alphacoders.com/115/1151249.jpg') no-repeat center/cover;
+    height: 100vh;
     color: white;
 }
 
-/* HEADER */
-.header {
-    background: #020617;
-    padding: 10px 20px;
+/* затемнение */
+.overlay {
+    background: rgba(0,0,0,0.75);
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    color: #facc15;
-    font-weight: bold;
-}
-
-.search {
-    background: #1e293b;
-    border: none;
-    padding: 8px;
-    border-radius: 6px;
-    color: white;
-}
-
-/* HERO */
-.hero {
-    height: 250px;
-    background: url('https://cdn.cloudflare.steamstatic.com/steam/apps/892970/library_hero.jpg') center/cover;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 
-.hero h1 {
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #facc15;
+/* заголовок */
+.title {
+    font-size: 60px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px black;
 }
 
-/* NAV */
-.nav {
-    background: #1e293b;
-    padding: 10px;
-    text-align: center;
+/* кнопки */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.nav a {
-    margin: 0 10px;
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    color: #22c55e;
-}
-
-/* GRID */
-.container {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* CARD */
-.card {
-    background: #1e293b;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #22c55e;
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card h2 {
-    padding: 10px;
-    color: #facc15;
-}
-
-/* FOOTER */
-.footer {
+.menu a {
+    width: 250px;
     text-align: center;
     padding: 15px;
-    background: #020617;
-    color: #94a3b8;
+    background: #0af;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    transform: scale(1.1);
+    background: #09c;
+}
+
+/* футер */
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <div class="logo">Valheim Wiki</div>
-    <input class="search" placeholder="Пошук...">
+<div class="overlay">
+
+<div class="title">⚔️ VALHEIM</div>
+
+<div class="menu">
+<a href="guide.html">📖 Почати гайд</a>
+<a href="guide.html#biomes">🌍 Біоми</a>
+<a href="guide.html#weapons">⚔️ Зброя</a>
+<a href="guide.html#bosses">👹 Боси</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Добро пожаловать у світ Valheim ⚔️</h1>
-</div>
-
-<!-- NAV -->
-<div class="nav">
-    <a href="guide.html">Предмети</a>
-    <a href="guide.html">Моби</a>
-    <a href="guide.html">Будівництво</a>
-    <a href="guide.html">Руди</a>
-</div>
-
-<!-- CONTENT -->
-<div class="container">
-
-<div class="card" onclick="go()">
-<img src="https://static.wikia.nocookie.net/valheim/images/3/3f/Greydwarf.png">
-<h2>👹 Моби</h2>
-</div>
-
-<div class="card" onclick="go()">
-<img src="https://static.wikia.nocookie.net/valheim/images/9/9b/Copper_ore.png">
-<h2>⛏ Руди</h2>
-</div>
-
-<div class="card" onclick="go()">
-<img src="https://static.wikia.nocookie.net/valheim/images/6/6e/Armor.png">
-<h2>🛡 Броня</h2>
-</div>
-
-<div class="card" onclick="go()">
-<img src="https://static.wikia.nocookie.net/valheim/images/5/5f/Mead.png">
-<h2>🧪 Зілля</h2>
-</div>
+<footer>
+Сделано одним человеком
+</footer>
 
 </div>
-
-<div class="footer">
-Зроблено одним Человеком 🇺🇦
-</div>
-
-<script>
-function go(){
-    window.location.href = "guide.html";
-}
-</script>
 
 </body>
 </html>
